@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:magang_jr_flutter_bwa/model/feature_model.dart';
 import 'package:magang_jr_flutter_bwa/themes/theme.dart';
 
 class FeatureWidgets extends StatelessWidget {
-  //NOTE access class 'Popular' model --> Atribute 'popular'
   final Feature fitur;
 
-  //NOTE Constractor
   const FeatureWidgets(this.fitur);
 
   @override
@@ -16,22 +15,31 @@ class FeatureWidgets extends StatelessWidget {
       children: [
         Container(
           width: 300,
-          decoration: BoxDecoration(
-              // color: homebgColor,
-              ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Container(
-                  child: Image.asset(
-                    //NOTE access Model Popular untuk image
-                    fitur.imageUrl,
-                    // width: MediaQuery.of(context).size.width,
-                    width: 356,
-                    height: 200,
-                    fit: BoxFit.cover,
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.amber,
+                  boxShadow: [
+                    BoxShadow(
+                      color: textColor1.withOpacity(0.2),
+                      spreadRadius: 0,
+                      blurRadius: 20,
+                      offset: Offset(0, 20),
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Container(
+                    child: Image.asset(
+                      fitur.imageUrl,
+                      width: 356,
+                      height: 200,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
               ),
@@ -41,28 +49,44 @@ class FeatureWidgets extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      //NOTE access Model Popular untuk name
-                      fitur.title,
-                      style: titleTextStyle.copyWith(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w800,
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          fitur.title,
+                          style: titleTextStyle.copyWith(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                        RatingBar(
+                          ratingWidget: RatingWidget(
+                            full: Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                            ),
+                            empty: Icon(Icons.star_border, color: Colors.amber),
+                            half: Icon(Icons.star_half, color: Colors.amber),
+                          ),
+                          initialRating: 5,
+                          ignoreGestures: true,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemSize: 18,
+                          itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
+                          onRatingUpdate: (rating) {},
+                        ),
+                      ],
                     ),
                     SizedBox(height: 4),
                     Text(
-                      //NOTE access Model Popular untuk harga
                       fitur.genre,
-                      style: subtitleTextStyle.copyWith(fontSize: 12),
+                      style: subtitleTextStyle.copyWith(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
-
-                    //NOTE Star
-                    // Row(
-                    //   mainAxisAlignment: MainAxisAlignment.start,
-                    //   children: [
-                    //     RatingsWidget(),
-                    //   ],
-                    // ),
                   ],
                 ),
               ),
