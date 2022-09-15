@@ -59,15 +59,16 @@ class MostWidgets2 extends StatelessWidget {
                     style: titleTextStyle.copyWith(
                       fontSize: 20,
                       fontWeight: FontWeight.w800,
+                      fontFamily: 'Avenir-Heavy',
                     ),
                   ),
                   SizedBox(height: 4),
                   Text(
-                    //NOTE access Model Popular untuk harga
                     most.genre,
                     style: subtitleTextStyle.copyWith(
                       fontSize: 16,
                       fontWeight: FontWeight.w400,
+                      fontFamily: "Avenir-Book",
                     ),
                   ),
                   SizedBox(height: 20),

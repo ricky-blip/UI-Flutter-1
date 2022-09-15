@@ -13,159 +13,172 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: homebgColor,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: homebgColor,
-        iconTheme: IconThemeData(color: Colors.black),
-        elevation: 0,
-        toolbarHeight: 100,
-        title: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 29),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Moviez",
-                style: titleTextStyle.copyWith(
-                  fontWeight: FontWeight.w900,
-                  fontSize: 28,
-                  fontFamily: 'Avenir',
-                  fontStyle: FontStyle.normal,
-                ),
-              ),
-              SizedBox(height: 4),
-              Text(
-                "Watch much easier",
-                style: subtitleTextStyle.copyWith(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 16,
-                  fontFamily: 'Avenir',
-                  fontStyle: FontStyle.normal,
-                ),
-              ),
-            ],
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
-            child: IconButton(
-              highlightColor: homebgColor,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SearchPages()),
-                );
-              },
-              icon: Icon(
-                Icons.search,
-                size: 50,
-                color: textColor1,
-              ),
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Stack(
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width * 0.280,
+              color: Colors.grey.shade50,
             ),
-          ),
-        ],
-      ),
-      body: Stack(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height,
-            width: 140,
-            color: homebgColor2,
-          ),
-          ListView(
-            children: [
-              //SECTION Feature
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 20,
-                  bottom: 20,
-                  // left: 29,
-                  // right: 29,
-                ),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
+            ListView(
+              children: [
+                //SECTION Header
+                Padding(
+                  padding: const EdgeInsets.only(
+                    top: 29,
+                    left: 24,
+                    bottom: 30,
+                  ),
                   child: Row(
-                    //SECTION Row Parent
                     children: [
-                      const SizedBox(width: 10),
-                      Padding(padding: EdgeInsets.only(left: 29)),
-                      FeatureWidgets(
-                        Feature(
-                          imageUrl: "assets/johnwick4.png",
-                          title: "John Wick 4",
-                          genre: "Action, Crime",
-                        ),
+                      //NOTE Column Text Header
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Moviez",
+                            style: titleTextStyle.copyWith(
+                              fontWeight: FontWeight.w900,
+                              fontSize: 28,
+                              fontFamily: 'Avenir-Black',
+                              fontStyle: FontStyle.normal,
+                            ),
+                          ),
+                          SizedBox(height: 4),
+                          Text(
+                            "Watch much easier",
+                            style: subtitleTextStyle.copyWith(
+                              fontWeight: FontWeight.w400,
+                              fontSize: 16,
+                              fontFamily: 'Avenir-Book',
+                              fontStyle: FontStyle.normal,
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(width: 24),
-                      FeatureWidgets(
-                        Feature(
-                          imageUrl: "assets/bohemian.jpg",
-                          title: "Bohemian",
-                          genre: "Documentary",
-                        ),
+                      Spacer(),
+                      //NOTE Column Button Search
+                      Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(37),
+                              bottomLeft: Radius.circular(37),
+                            ),
+                            child: Container(
+                              width: 55,
+                              height: 45,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(37),
+                                  bottomLeft: Radius.circular(37),
+                                ),
+                              ),
+                              child: InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => SearchPages(),
+                                    ),
+                                  );
+                                },
+                                child: Icon(Icons.search),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(width: 24),
                     ],
                   ),
                 ),
-              ),
-              //SECTION Text From Disney
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 30,
-                  left: 40,
-                  right: 40,
+                //SECTION Feature
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 24,
+                      bottom: 30,
+                    ),
+                    child: Row(
+                      //SECTION Row Parent
+                      children: [
+                        FeatureWidgets(
+                          Feature(
+                            imageUrl: "assets/johnwick4.png",
+                            title: "John Wick 4",
+                            genre: "Action, Crime",
+                          ),
+                        ),
+                        SizedBox(width: 24),
+                        FeatureWidgets(
+                          Feature(
+                            imageUrl: "assets/bohemian.jpg",
+                            title: "Bohemian",
+                            genre: "Documentary",
+                          ),
+                        ),
+                        SizedBox(width: 24),
+                      ],
+                    ),
+                  ),
                 ),
-                child: Row(
+                //SECTION Text From Disney
+                Row(
                   children: [
-                    Text(
-                      "From Disney",
-                      textAlign: TextAlign.start,
-                      style: titleTextStyle.copyWith(
-                        fontWeight: FontWeight.w900,
-                        fontSize: 24,
-                        fontFamily: 'Avenir',
-                        fontStyle: FontStyle.normal,
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 24,
+                        bottom: 20,
+                      ),
+                      child: Text(
+                        "From Disney",
+                        textAlign: TextAlign.start,
+                        style: titleTextStyle.copyWith(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 24,
+                          fontFamily: 'Avenir-Black',
+                          fontStyle: FontStyle.normal,
+                        ),
                       ),
                     ),
                   ],
                 ),
-              ),
-              //SECTION Most
-              //NOTE Most 1
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 20,
-                  left: 40,
-                  bottom: 20,
-                ),
-                child: MostWidgets(
-                  Most(
-                    imageUrl: "assets/mulan.png",
-                    title: "Mulan",
-                    genre: "History, War",
+                //SECTION Most
+                //NOTE Most 1
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 24,
+                    bottom: 30,
+                  ),
+                  child: MostWidgets(
+                    Most(
+                      imageUrl: "assets/mulan.png",
+                      title: "Mulan",
+                      genre: "History, War",
+                    ),
                   ),
                 ),
-              ),
-              //NOTE Most 2
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 40,
-                  bottom: 40,
-                ),
-                child: MostWidgets2(
-                  Most(
-                    imageUrl: "assets/beautybeast.png",
-                    title: "Beauty & Beast",
-                    genre: "Sci-Fiction",
+                //NOTE Most 2
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 24,
+                  ),
+                  child: MostWidgets2(
+                    Most(
+                      imageUrl: "assets/beautybeast.png",
+                      title: "Beauty & Beast",
+                      genre: "Sci-Fiction",
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

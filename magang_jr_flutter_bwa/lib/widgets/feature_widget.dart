@@ -57,6 +57,7 @@ class FeatureWidgets extends StatelessWidget {
                           style: titleTextStyle.copyWith(
                             fontSize: 20,
                             fontWeight: FontWeight.w800,
+                            fontFamily: "Avenir-Heavy",
                           ),
                         ),
                         RatingBar(
@@ -85,6 +86,7 @@ class FeatureWidgets extends StatelessWidget {
                       style: subtitleTextStyle.copyWith(
                         fontSize: 16,
                         fontWeight: FontWeight.w400,
+                        fontFamily: "Avenir-Book",
                       ),
                     ),
                   ],
