@@ -1,4 +1,4 @@
-# magang_jr_flutter_bwa
+# UI Flutter
 
 A new Flutter project.
 
