@@ -73,7 +73,7 @@ class _SearchPagesState extends State<SearchPages> {
                                   Text(
                                     "The Dar|",
                                     style: titleTextStyle.copyWith(
-                                      fontFamily: "Avenir-Book",
+                                      // fontFamily: "Avenir-Book",
                                       fontSize: 16,
                                       fontWeight: FontWeight.w400,
                                       fontStyle: FontStyle.normal,
@@ -130,7 +130,7 @@ class _SearchPagesState extends State<SearchPages> {
                                 style: titleTextStyle.copyWith(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w900,
-                                  fontFamily: 'Avenir-Heavy',
+                                  // fontFamily: 'Avenir-Heavy',
                                 ),
                               ),
                               SizedBox(width: 5),
@@ -139,7 +139,7 @@ class _SearchPagesState extends State<SearchPages> {
                                 style: titleTextStyle.copyWith(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w400,
-                                  fontFamily: 'Avenir-Heavy',
+                                  // fontFamily: 'Avenir-Heavy',
                                 ),
                               ),
                             ],
@@ -215,7 +215,7 @@ class _SearchPagesState extends State<SearchPages> {
                                 fontSize: 16,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500,
-                                fontFamily: 'Avenir-Medium',
+                                // fontFamily: 'Avenir-Medium',
                                 fontStyle: FontStyle.normal,
                               ),
                             ),

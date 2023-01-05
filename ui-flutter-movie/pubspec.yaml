@@ -76,30 +76,30 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  fonts:
-    - family: Avenir-Black
-      fonts:
-        - asset: fonts/AvenirLTStd-Black.otf
+  # fonts:
+  #   - family: Avenir-Black
+  #     fonts:
+  #       - asset: fonts/AvenirLTStd-Black.otf
 
-    - family: Avenir-Book
-      fonts:
-        - asset: fonts/AvenirLTStd-Book.otf
+  #   - family: Avenir-Book
+  #     fonts:
+  #       - asset: fonts/AvenirLTStd-Book.otf
 
-    - family: Avenir-Roman
-      fonts:
-        - asset: fonts/AvenirLTStd-Roman.otf
+  #   - family: Avenir-Roman
+  #     fonts:
+  #       - asset: fonts/AvenirLTStd-Roman.otf
     
-    - family: Avenir-Medium
-      fonts:
-        - asset: fonts/Avenir_Medium.ttf
+  #   - family: Avenir-Medium
+  #     fonts:
+  #       - asset: fonts/Avenir_Medium.ttf
     
-    - family: Avenir-Heavy
-      fonts:
-        - asset: fonts/Avenir_Heavy.ttf
+  #   - family: Avenir-Heavy
+  #     fonts:
+  #       - asset: fonts/Avenir_Heavy.ttf
 
-    - family: Avenir-Heavy-Std
-      fonts:
-        - asset: fonts/Avenir_Heavy_Std.ttf
+  #   - family: Avenir-Heavy-Std
+  #     fonts:
+  #       - asset: fonts/Avenir_Heavy_Std.ttf
         
   #         weight: 700
   #   - family: Schyler

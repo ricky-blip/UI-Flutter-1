@@ -42,7 +42,7 @@ class Home extends StatelessWidget {
                             style: titleTextStyle.copyWith(
                               fontWeight: FontWeight.w900,
                               fontSize: 28,
-                              fontFamily: 'Avenir-Black',
+                              // fontFamily: 'Avenir-Black',
                               fontStyle: FontStyle.normal,
                             ),
                           ),
@@ -52,7 +52,7 @@ class Home extends StatelessWidget {
                             style: subtitleTextStyle.copyWith(
                               fontWeight: FontWeight.w400,
                               fontSize: 16,
-                              fontFamily: 'Avenir-Book',
+                              // fontFamily: 'Avenir-Book',
                               fontStyle: FontStyle.normal,
                             ),
                           ),
@@ -140,7 +140,7 @@ class Home extends StatelessWidget {
                         style: titleTextStyle.copyWith(
                           fontWeight: FontWeight.w900,
                           fontSize: 24,
-                          fontFamily: 'Avenir-Black',
+                          // fontFamily: 'Avenir-Black',
                           fontStyle: FontStyle.normal,
                         ),
                       ),
@@ -175,6 +175,7 @@ class Home extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(height: 30),
               ],
             ),
           ],
